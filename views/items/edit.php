@@ -5,7 +5,7 @@ include "../../Controllers/CategoryController.php";
 
 $categories = CategoryController::getAll();
 
-//jei atejai su post, atnaujinam irasa, ir redirectinam i index.php
+
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     ItemController::update($_POST['id']);
     header("Location: ./index.php".(isset($_GET['category_id']) ? "?category_id=". $_GET['category_id'] : ""));
