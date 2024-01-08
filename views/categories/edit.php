@@ -5,7 +5,6 @@ include "../../Controllers/CategoryController.php";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     CategoryController::update($_POST['id']);
-    $_SESSION['success'] = "Kategorija sėkmingai atnaujinta!";
     header("Location: ./index.php");
 }
 
@@ -14,6 +13,7 @@ if (!isset($_GET['id'])) {
 }
 
 $category = CategoryController::find($_GET['id']);
+
 
 
 ?>
@@ -35,12 +35,12 @@ $category = CategoryController::find($_GET['id']);
                         <input type="text" class="form-control" id="categoryName" name="name" placeholder="Pavadinimas" value="<?=$category->name?>">
                     </div>
                     <div class="form-group">
-                        <label for="categoryPhoto">Kategorijos nuotrauka</label>
-                        <input type="text" class="form-control" id="photo" name="photo" placeholder="Nuotraukos nuoroda" value="<?=$category->photo?>">
-                    </div>
-                    <div class="form-group">
                         <label for="exampleFormControlTextarea1">Aprašymas</label>
                         <textarea class="form-control" id="description" name="description" placeholder="Aprašymas" rows="3"><?=$category->description?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Kategorijos nuotrauka</label>
+                        <textarea class="form-control" id="photo" name="photo" placeholder="Nuotraukos nuoroda" rows="3"><?=$category->photo?></textarea>
                     </div>
                     <input type="hidden" name="id" value="<?=$category->id?>">
                     <button type='submit' class='btn btn-sm confirm'>Pateikti</button>

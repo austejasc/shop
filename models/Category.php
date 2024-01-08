@@ -62,9 +62,9 @@ class Category {
     {
         $db = new mysqli("localhost", "root", "", "web_11_23_shop");
         $db->set_charset("utf8");
-        $sql = "UPDATE `categories` SET `name`= ?, `description`= ? WHERE `id` = ?";
+        $sql = "UPDATE `categories` SET `name`= ?, `description`= ?, `photo`= ? WHERE `id` = ?";
         $stmt = $db->prepare($sql);
-        $stmt->bind_param("ssi", $this->name, $this->description, $this->id);
+        $stmt->bind_param("sssi", $this->name, $this->description, $this->photo, $this->id);
         $stmt->execute();
         $db->close();
     }

@@ -27,7 +27,26 @@ class ItemController
     }
 
     public static function store(){
+        if (strlen($_POST['title']) == 0) {
+            $errors[] = "Nėra pavadinimo!";
+        }
+
+        if (strlen($_POST['price']) == 0) {
+            $errors[] = "Nėra kainos!";
+        }
         
+        if (strlen($_POST['description']) == 0) {
+            $errors[] = "Nėra aprašymo!";
+        }
+
+        if (strlen($_POST['photo']) == 0) {
+            $errors[] = "Nėra nuotraukos!";
+        }
+        
+        if($errors){
+            $_SESSION['alert'] = $errors;
+            return false;
+        }
         $item = new Item();
         $item->title = $_POST['title'];
         $item->price = $_POST['price'];
@@ -35,10 +54,12 @@ class ItemController
         $item->photo = $_POST['photo'];
         $item->categoryId = $_POST['categoryId'];
         $item->save();
+        return true;
     }
 
     public static function update($id)
     {
+        
         $item = Item::find($id);
         $item->title = $_POST['title'];
         $item->description = $_POST['description'];

@@ -12,6 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: ./index.php");
     die;
     }
+    // else {
+    //     header("Location: ./create.php");
+    // }
+
+    include_once "../components/messages.php";
+
 }
 
 

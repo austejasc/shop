@@ -33,19 +33,26 @@ class CategoryController{
         return true;
     }
 
+
+
     public static function destroy($id) {
         Category::destroy($id);
     }
+
+
 
     public static function find($id){
         $category = Category::find($id);
         return $category;
     }
 
+
+
     public static function update($id) {
         $category = Category::find($id);
         $category->name = $_POST['name'];
         $category->description = $_POST['description'];
+        $category->photo = $_POST['photo'];
         $category->update();
     }
 

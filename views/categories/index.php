@@ -1,4 +1,5 @@
 <?php
+include_once "../components/head.php";
 include "../../Controllers/CategoryController.php";
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -7,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 }
 $categories = CategoryController::getAll();
 
-include_once "../components/head.php";
+include_once "../components/messages.php";
 
 ?>
 

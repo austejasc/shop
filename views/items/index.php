@@ -5,7 +5,7 @@ include "../../Controllers/CategoryController.php";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     ItemController::destroy($_POST['id']);
-    header("Location: ./index.php");
+    header("Location: ./index.php".(isset($_GET['category_id']) ? "?category_id=". $_GET['category_id'] : ""));
 }
 
 if (isset($_GET['category_id'])) {

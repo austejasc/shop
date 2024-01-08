@@ -15,6 +15,33 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Pagrindinis</title>
 
+    <style>
+
+      /* FOOTER */
+    .fa {
+      text-decoration: none;
+      padding: 10px;
+      color: #36454F;
+    
+    }
+
+    .inc{
+      position: absolute;
+      left: auto;
+    }
+
+    .socialMedia{
+      position: absolute;
+      right: 25px;
+    }
+
+    #footer{
+      display: inline-block;
+    }
+
+
+    </style>
+
 </head>
 
 <body style="background-color:#E2DFE6">
@@ -49,22 +76,3 @@ session_start();
     </div>
   </div>
 </nav>
-
-<?php if(isset($_SESSION['success'])){ ?>
-        <div class="alert alert-success" role="alert">
-            <?= $_SESSION['success'] ?>
-        </div>
-        <?php } 
-        unset($_SESSION['success']);
-        ?>
-        
-        <?php if (isset($_SESSION["alert"])) { 
-        foreach ($_SESSION["alert"] as $alert) {?>
-            <div class="alert alert-danger" role="alert">
-                <?= $alert ?>
-            </div>
-        
-        <?php
-        }
-        unset($_SESSION["alert"]);
-        } ?>
