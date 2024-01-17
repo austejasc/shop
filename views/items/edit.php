@@ -1,25 +1,24 @@
-<?php 
-
+<?php
 include "../../Controllers/ItemController.php";
 include "../../Controllers/CategoryController.php";
 
 $categories = CategoryController::getAll();
 
-
-if($_SERVER['REQUEST_METHOD'] == "POST"){
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     ItemController::update($_POST['id']);
-    header("Location: ./index.php".(isset($_GET['category_id']) ? "?category_id=". $_GET['category_id'] : ""));
-    die;
+    header("Location: ./index.php" . (isset($_GET['category_id']) ? "?category_id=" . $_GET['category_id'] : ""));
 }
 
-// if (!isset($_GET['id'])) {
-//     header("Location: ./index.php".(isset($_GET['category_id']) ? "?category_id=". $_GET['category_id'] : ""));
-// }
+if (!isset($_GET['id'])) {
+    header("Location: ./index.php" . (isset($_GET['category_id']) ? "?category_id=" . $_GET['category_id'] : ""));
+}
 
 $item = ItemController::find($_GET['id']);
 
 include_once "../components/head.php";
 ?>
+
+
 
     <div class="container">
         <div class="row">

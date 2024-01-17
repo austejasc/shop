@@ -1,0 +1,21 @@
+.fa {
+    text-decoration: none;
+    padding: 10px;
+    /* color: #36454F; */
+    color: #c6d8e3;
+  }
+
+  .inc{
+    position: absolute;
+    left: auto;
+  }
+
+  .socialMedia{
+    position: absolute;
+    right: 25px;
+  }
+
+  #footer{
+    display: inline-block;
+  }
+
