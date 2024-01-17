@@ -1,4 +1,5 @@
 <?php
+include_once "../components/head.php";
 include "../../Controllers/ItemController.php";
 include "../../Controllers/CategoryController.php";
 
@@ -15,7 +16,7 @@ if (!isset($_GET['id'])) {
 
 $item = ItemController::find($_GET['id']);
 
-include_once "../components/head.php";
+include_once "../components/messages.php";
 ?>
 
 

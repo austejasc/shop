@@ -1,5 +1,5 @@
 <?php
-
+include_once "../components/head.php";
 include "../../Controllers/ItemController.php";
 include "../../Controllers/CategoryController.php";
 
@@ -15,7 +15,7 @@ if (isset($_GET['category_id'])) {
 
 }
 
-include_once "../components/head.php";
+include_once "../components/messages.php";
 ?>
 
 

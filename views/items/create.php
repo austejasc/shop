@@ -7,7 +7,7 @@ $categories = CategoryController::getAll();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (ItemController::store()){
-        $_SESSION['success'] = "Kategorija sėkmingai sukurta!";
+        $_SESSION['success'] = "Prekė sėkmingai pridėta!";
         header("Location: ./index.php".(isset($_GET['category_id']) ? "?category_id=". $_GET['category_id'] : ""));
     die;
     }
@@ -34,12 +34,10 @@ include_once "../components/messages.php";
                         <label for="itemName">Prekės pavadinimas</label>
                         <input type="text" class="form-control" id="categoryName" name="title" placeholder="Pavadinimas" value="<?=(isset($_POST['title'])) ? $_POST['title'] : "" ?>">
                     </div>
-                    <br>
                     <div class="form-group">
                         <label for="price">Kaina</label>
                         <input type="text" class="form-control" id="price" name="price" placeholder="Kaina" value="<?=(isset($_POST['price'])) ? $_POST['price'] : "" ?>">
                     </div>
-                    <br>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Aprašymas</label>
                         <textarea class="form-control" id="description" name="description" placeholder="Aprašymas" value="<?=(isset($_POST['description'])) ? $_POST['description'] : "" ?>" rows="3"></textarea>
