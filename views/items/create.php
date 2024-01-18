@@ -32,7 +32,7 @@ include_once "../components/messages.php";
                 <form action="./create.php<?=isset($_GET['category_id']) ?"?category_id=". $_GET['category_id'] : ""?>" method="POST">
                     <div class="form-group">
                         <label for="itemName">Prekės pavadinimas</label>
-                        <input type="text" class="form-control" id="categoryName" name="title" placeholder="Pavadinimas" value="<?=(isset($_POST['title'])) ? $_POST['title'] : "" ?>">
+                        <input type="text" class="form-control" id="itemName" name="title" placeholder="Pavadinimas" value="<?=(isset($_POST['title'])) ? $_POST['title'] : "" ?>">
                     </div>
                     <div class="form-group">
                         <label for="price">Kaina</label>

@@ -44,17 +44,17 @@ include_once "../components/messages.php";
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Aprašymas</label>
-                        <textarea class="form-control" id="description" name="description" placeholder="Aprašymas" rows="3"><?=$item->description; ?></textarea>
+                        <label for="description">Aprašymas</label>
+                        <textarea class="form-control" id="description" name="description" placeholder="Aprašymas"><?=$item->description; ?></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Nuotraukos nuoroda</label>
-                        <textarea class="form-control" id="photo" name="photo" placeholder="Nuotraukos nuoroda" rows="3"><?=$item->photo; ?></textarea>
+                        <label for="photo">Nuotraukos nuoroda</label>
+                        <textarea class="form-control" id="photo" name="photo" placeholder="Nuotraukos nuoroda"><?=$item->photo; ?></textarea>
                     </div>
 
                     <input type="hidden" name="id" value="<?=$item->id?>">
                     <button type='submit' class='btn btn-sm confirm'>Pateikti</button>
-            <a class='btn btn-danger btn-sm' href='./index.php<?=isset($_GET['category_id']) ?"?category_id=". $_GET['category_id'] : ""?>' role="button">Atšaukti</a>
+                    <a class='btn btn-danger btn-sm' href='./index.php<?=isset($_GET['category_id']) ?"?category_id=". $_GET['category_id'] : ""?>' role="button">Atšaukti</a>
         </form>
         </div>
             <div class="col-3"></div>

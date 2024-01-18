@@ -41,10 +41,10 @@ include_once "../components/messages.php";
                 <div class="col-3 inline-block mt-3 item">
                     <div class="row mb-3">
                         <div class="col-6 p-2">
-                            <a href='./edit.php<?=isset($_GET['category_id']) ?"?category_id=". $_GET['category_id'] : ""?>' class="edit">Redaguoti</a>
+                            <a href='./edit.php?id=<?=isset($_GET['category_id']) ?"?category_id=". $_GET['category_id'] : ""?>' class="edit">Redaguoti</a>
                         </div>
                         <div class="col-6 p-2">
-                            <a href='./delete.php?id=<?= $item->id?>' class="delete">✕ Ištrinti</a></div>
+                            <a href='./delete.php?id=<?=isset($_GET['category_id']) ?"?category_id=". $_GET['category_id'] : ""?>' class="delete">✕ Ištrinti</a></div>
                         </div>
                     <div class="row">
                         <div class="col">
